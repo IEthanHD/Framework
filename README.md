@@ -16,19 +16,18 @@ I am currently reamking and changing parts of the framework so you never need to
 # Bugs and Errors:  
 
 # License: 
-Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
+The Framework (Altis Life RPG) by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
+
+Scripts created by me (XaLaForo) is licensed under the MIT license.
 
 # Links:
-  - Discord: https://discord.gg/ajGUDSH
-  - Forums: TBD
-  - Wiki: https://github.com/AsYetUntitled/Framework/wiki 
-  - Releases (Stable Builds): https://github.com/AsYetUntitled/Framework/releases
+  - Discord: https://discord.gg/d6tvdB
 
 <p align="center">
     <a href="https://travis-ci.org/AsYetUntitled/Framework">
         <img src="https://api.travis-ci.org/AsYetUntitled/Framework.svg" alt="Build Status">
     </a>
        <a href="https://discord.gg/ajGUDSH">
-        <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/ajGUDSH">
+        <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/d6tvdB">
     </a>
 </p>
