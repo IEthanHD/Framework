@@ -152,7 +152,7 @@ switch (_code) do {
     //Restraining (Shift + R)
     case 19: {
         if (_shift) then {_handled = true;};
-        if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
+        if (_shift && (Trinity_Is_Cop) && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
             [] call life_fnc_restrainAction;
         };
     };
@@ -196,25 +196,6 @@ switch (_code) do {
         };
     };
 
-    //L Key?
-    case 38: {
-        //If cop run checks for turning lights on.
-        if (_shift && playerSide in [west,independent]) then {
-            if (!(isNull objectParent player) && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
-                if (!isNil {vehicle player getVariable "lights"}) then {
-                    if (playerSide isEqualTo west) then {
-                        [vehicle player] call life_fnc_sirenLights;
-                    } else {
-                        [vehicle player] call life_fnc_medicSirenLights;
-                    };
-                    _handled = true;
-                };
-            };
-        };
-
-        if (!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
-    };
-
     //Y Player Menu
     case 21: {
         if (!_alt && !_ctrlKey && !dialog && !(player getVariable ["restrained",false]) && {!life_action_inUse}) then {
@@ -222,35 +203,69 @@ switch (_code) do {
         };
     };
 
-    //F Key
-    case 33: {
-        if (playerSide in [west,independent] && {vehicle player != player} && {!life_siren_active} && {((driver vehicle player) == player)}) then {
-            [] spawn {
-                life_siren_active = true;
-                sleep 4.7;
-                life_siren_active = false;
+    //--- L KEY
+    case 38: {
+
+        //--- If cop then run checks for turning lights on.
+        if ( _shift && { playerSide in [ west, independent, civilian ] } ) then {
+
+            if (Trinity_Is_Civ) exitwith {};
+
+            if ( !isNil { vehicle player getVariable "lights" } ) then {
+
+                [ vehicle player ] call AX_fnc_vehicleEmergencyLights;
+                _handled = true;
+
             };
 
-            _veh = vehicle player;
-            if (isNil {_veh getVariable "siren"}) then {_veh setVariable ["siren",false,true];};
-            if ((_veh getVariable "siren")) then {
-                titleText [localize "STR_MISC_SirensOFF","PLAIN"];
-                _veh setVariable ["siren",false,true];
-                if !(isNil {(_veh getVariable "sirenJIP")}) then {
-                    private _jip = _veh getVariable "sirenJIP";
-                    _veh setVariable ["sirenJIP",nil,true];
-                    remoteExec ["",_jip]; //remove from JIP queue
-                };
+        };
+
+    };
+
+
+    //--- F KEY
+    case 33: {
+
+        //--- Only F
+        if ( !_shift && { playerSide in [ west, independent, civilian ] } && { !( vehicle player isEqualTo player ) } && { !life_siren_active } && { driver vehicle player isEqualTo player } ) then {
+
+            if (Trinity_Is_Civ) exitwith {};
+
+            [] spawn {
+
+                [ vehicle player ] remoteExec [ "AX_fnc_vehicleSiren", 0 ];
+
+                life_siren_active = true;
+
+                sleep 5;
+
+                life_siren_active = false;
+
+            };
+
+            if ( isNil { vehicle player getVariable "siren" } ) then {
+
+                //--- Set Sirens to false on vehicle
+                vehicle player setVariable [ "siren", false, true ];
+
+            };
+
+            if ( vehicle player getVariable "siren" ) then {
+
+                //--- Notify
+                titleText [ localize "STR_MISC_SirensOFF", "PLAIN" ];
+
+                //--- Set Sirens to False on Vehicle
+                vehicle player setVariable [ "siren", false, true ];
+
             } else {
-                titleText [localize "STR_MISC_SirensON","PLAIN"];
-                _veh setVariable ["siren",true,true];
-                private "_jip";
-                if (playerSide isEqualTo west) then {
-                    _jip = [_veh] remoteExec ["life_fnc_copSiren",RCLIENT,true];
-                } else {
-                    _jip = [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT,true];
-                };
-                _veh setVariable ["sirenJIP",_jip,true];
+
+                //--- Notify
+                titleText [ localize "STR_MISC_SirensON", "PLAIN" ];
+
+                //--- Set Variable on Vehicle
+                vehicle player setVariable [ "siren", true, true ];
+
             };
         };
     };

@@ -43,7 +43,7 @@ _escSync = {
 };
 
 _canUseControls = {
-    if (playerSide isEqualTo west) exitWith {true};
+    if (Trinity_Is_Cop) exitWith {true};
     if ((player getVariable ["restrained",false]) || (player getVariable ["Escorting",false]) || (player getVariable ["transporting",false]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
 };
 
