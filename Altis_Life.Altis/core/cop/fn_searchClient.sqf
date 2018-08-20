@@ -10,7 +10,7 @@ private ["_inv","_val","_var","_robber"];
 params [
     ["_cop",objNull,[objNull]]
 ];
-if (isNull _cop) exitWith {};
+if !(Trinity_Is_Cop) exitWith {};
 
 _inv = [];
 _robber = false;
