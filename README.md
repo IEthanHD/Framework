@@ -1,12 +1,10 @@
-[![|Solid](http://i.imgur.com/pL3heId.png)](https://github.com/AsYetUntitled/Framework/)
-
 AsYetUntitled, formerly <b>Altis Life RPG</b> and <b>ARMARPGLIFE</b> is a roleplay framework for ArmA III originally made by <b>TAW_Tonic</b>.
 
 This Github is not currently associated with any forums.
 
 # Features:
 
-  - Police, Civ and Medic roles 
+  - Police, Civ and Medic roles all in one slot no need to log off.
   - Banking System
   - Virtual Item system 
   - Vitem shops, vehicle shops, weapon shops, clothing stores etc. 
