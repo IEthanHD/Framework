@@ -20,7 +20,7 @@ This mission is buggy and I am actively looking to get it fully functional so it
 # License: 
 The Framework (Altis Life RPG) by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
 
-Scripts created by me (XaLaForo) is licensed under the MIT license.
+Scripts created by me (XaLaForo) are licensed under the MIT license.
 
 # Links:
   - Discord: https://discord.gg/d6tvdB
