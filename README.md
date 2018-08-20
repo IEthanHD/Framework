@@ -15,6 +15,8 @@ I am currently reamking and changing parts of the framework so you never need to
   
 # Bugs and Errors:  
 
+This mission is buggy and I am actively looking to get it fully functional so it is amazing.com
+
 # License: 
 The Framework (Altis Life RPG) by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
 
