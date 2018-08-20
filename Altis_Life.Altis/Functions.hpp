@@ -21,8 +21,28 @@ class SpyGlass {
     };
 };
 
+class AX_Civ_Login {
+    tag = "AX";
+
+    class ll {
+       file = "Scripts";
+        class blueLights              {};
+        class orangeLights            {};
+        class vehicleEmergencyLights  {};
+        class vehicleSiren            {};
+        class timer                   {};
+   };
+};
+
 class Life_Client_Core {
     tag = "life";
+
+    class Scripts {
+        file = "Scripts";
+        class civLogon {};
+        class copLogon {};
+        class medLogon {};
+    };
 
     class Master_Directory {
         file = "core";
