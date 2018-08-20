@@ -1,6 +1,7 @@
 AsYetUntitled, formerly <b>Altis Life RPG</b> and <b>ARMARPGLIFE</b> is a roleplay framework for ArmA III originally made by <b>TAW_Tonic</b>.
 
-This Github is not currently associated with any forums.
+# Synopsis:
+I am currently reamking and changing parts of the framework so you never need to log off to go on as cop or medic. And i will be planning on making a modular script so you can add new factions with ease.
 
 # Features:
 
@@ -11,6 +12,8 @@ This Github is not currently associated with any forums.
   - Housing System 
   - Persistent wanted system
   - Many more. 
+  
+# Bugs and Errors:  
 
 # License: 
 Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
