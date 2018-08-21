@@ -6,6 +6,8 @@ I am currently reamking and changing parts of the framework so you never need to
 # Features:
 
   - Police, Civ and Medic roles all in one slot no need to log off.
+  - Civilian LogOn System
+  - Will Inlcude All IRT Scripts
   - Banking System
   - Virtual Item system 
   - Vitem shops, vehicle shops, weapon shops, clothing stores etc. 
